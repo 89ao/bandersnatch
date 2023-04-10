@@ -58,16 +58,7 @@ def main() -> int:
                 start_time = time()
 
                 try:
-                    cmd = [
-                        sys.executable,
-                        "-m",
-                        "bandersnatch.main",
-                        "--config",
-                        args.config,
-                        "mirror",
-                        force_check,
-                    ]
-                    run(cmd, check=True)
+                    os.system(f"{sys.executable} -m bandersnatch.main --config {args.config} mirror {force_check}")
                 except CalledProcessError as cpe:
                     return cpe.returncode
 
